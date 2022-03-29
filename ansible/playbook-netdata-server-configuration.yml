@@ -1,0 +1,8 @@
+---
+- name: 'Netdata server configuration'
+  hosts: 'netdata_servers'
+  gather_facts: 'yes'
+  become: 'true'
+
+  roles:
+    - role: 'netdata-server'
