@@ -1,0 +1,8 @@
+---
+- name: 'Netdata node configuration'
+  hosts: 'netdata_nodes'
+  gather_facts: 'yes'
+  become: 'true'
+
+  roles:
+    - role: 'netdata-agent'
