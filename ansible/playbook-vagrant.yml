@@ -1,0 +1,22 @@
+---
+- name: 'Bootstrapping'
+  hosts: 'all'
+  gather_facts: 'yes'
+  become: 'true'
+
+  roles:
+    - role: 'zypper_ref_accept_keys'
+    - role: 'minimal_bashrc'
+      vars:
+        additional_users: "{{ ansible_user }}"
+    - role: 'create_a_vimrc'
+      vars:
+        additional_users: "{{ ansible_user }}"
+
+- name: 'Include netdata-server-configuration playbook'
+  import_playbook: playbook-netdata-server-configuration.yml
+  when: 'inventory_hostname == "netdata-server"'
+
+- name: 'Include netdata-nodes-configuration playbook'
+  import_playbook: playbook-netdata-nodes-configuration.yml
+  when: 'inventory_hostname != "netdata-server"'
