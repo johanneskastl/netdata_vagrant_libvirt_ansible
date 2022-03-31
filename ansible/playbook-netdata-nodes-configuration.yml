@@ -1,4 +1,9 @@
 ---
+- name: 'Gather facts for all hosts'
+  hosts: 'all'
+  gather_facts: 'yes'
+  become: 'true'
+
 - name: 'Netdata node configuration'
   hosts: 'netdata_nodes'
   gather_facts: 'yes'
