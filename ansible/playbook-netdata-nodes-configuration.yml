@@ -11,3 +11,8 @@
 
   roles:
     - role: 'netdata-agent'
+      vars:
+        use_stable_packages: false
+        send_stream: 'true'
+        api_key: 'f2356f15-16c4-40c1-9119-1c6816a03488'
+        stream_destination: "{{ hostvars[groups['netdata_servers'][0]]['ansible_default_ipv4']['address'] }}"
