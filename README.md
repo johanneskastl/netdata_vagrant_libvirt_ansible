@@ -2,6 +2,8 @@
 
 This Vagrant setup creates a netdata-server VM and two VMs as "nodes".
 
+The "nodes" are being configured to send metrics to the netdata-server, netdata calls that "streams".
+
 Default OS is openSUSE Leap 15.3, but that can be changed in the Vagrantfile. Please beware, this might break the ansible provisioning which was only tested with openSUSE Leap 15.3.
 
 ## Vagrant
@@ -11,7 +13,8 @@ Default OS is openSUSE Leap 15.3, but that can be changed in the Vagrantfile. Pl
 3. Make sure the git submodules are fully working by issuing `git submodule init && git submodule update`
 4. Run `vagrant up`
 5. Open the netdata-server's IP address in your browser using port 19999 and you will find the netdata Dashboard.
-6. Party!
+6. In the netdata dashboard, check the small `>` sign on the left, where you can switch between the metrics from the netdata-server machine and the other two nodes.
+7. Party!
 
 ## Disabling the Ansible provisioning
 
