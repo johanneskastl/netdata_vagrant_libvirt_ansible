@@ -6,3 +6,5 @@
 
   roles:
     - role: 'netdata-server'
+      vars:
+        use_stable_packages: false
