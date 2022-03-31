@@ -8,3 +8,5 @@
     - role: 'netdata-server'
       vars:
         use_stable_packages: false
+        receive_streams: 'true'
+        api_key: 'f2356f15-16c4-40c1-9119-1c6816a03488'
